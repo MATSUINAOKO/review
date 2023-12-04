@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "api/vi",
+  baseURL: "api/v1",
 });
 
 export default axiosClient;

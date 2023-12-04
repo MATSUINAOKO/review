@@ -5,10 +5,13 @@ import "./App.css";
 import todoApi from "./api/todoApi";
 
 function App() {
-  const [lists, setLists] = useState();
+  const [lists, setLists] = useState([]);
+
   async function getAll() {
+    console.log("ここは通ってますか?");
     const res = await todoApi.getAll();
-    setLists(res);
+    console.log("res", res.data);
+    await setLists(res.data); //axiosはres.dataに格納されている
   }
 
   useEffect(() => {
@@ -17,6 +20,7 @@ function App() {
   return (
     <>
       <h1>ToDoリスト</h1>
+      <link rel="icon" href="data:,"></link>
       <ul>
         {lists.map((elem, index) => (
           <li key={index}>
