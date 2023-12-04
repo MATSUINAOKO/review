@@ -12,7 +12,7 @@ const setUpServer = () => {
   );
   app.use(express.json());
   // app.use(express.static(path.resolve(__dirname, "..", "dist")));
-  app.use(express.static("../client/demo/dist"));
+  app.use("/", express.static("../client/demo/dist"));
 
   app.get("/api/v1/todo", (req, res) => {
     console.log("getリクエストが来ました");
