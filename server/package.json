@@ -10,7 +10,9 @@
     "seed": "knex seed:run",
     "makeSeed": "knex seed:make",
     "rollback": "knex migrate:rollback",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "build": "npm install && npm run migrate && npm run seed"
   },
   "author": "",
   "license": "ISC",
